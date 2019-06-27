@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+
+
+{% block js_add%}
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>	
+	<script type="text/javascript" src="{{ url_for('static', filename = 'imageMapResizer_min.js') }}"></script> 
+    <script type="text/javascript" src="{{ url_for('static', filename = 'jqueryMin.js') }}"></script> 
+    <script type="text/javascript" src="{{ url_for('static', filename = 'jqueryMaps.js') }}"></script> 
+    <script type="text/javascript" src="{{ url_for('static', filename = 'jquery.imagemapster.js') }}"></script> 
+    <script type="text/javascript" src="{{ url_for('static', filename = 'quiz1.js') }}"></script> 
+
+
+{% endblock%}
+
+
+{% block css_add%}
+<style>
+	.note_pic{
+		margin-right: 30%
+
+	}
+	.center{
+	  margin-top: 10%;
+	  /*display: block*/
+	}
+	.btn-dark{
+	  background-color: lightgrey;
+	}
+	.grid{
+		border: 0.5px solid;
+	  	padding: 10px;
+	  	box-shadow: 5px 10px 18px #888888;
+	}
+	#martian{
+		border-style: solid
+	}
+	.header{
+		text-align: center
+
+	}
+</style>
+
+{% endblock%}
+
+
+{% block placeholder%}
+	
+<body>
+<div class="container">
+<!-- <div style="clear:both; height:20px;"></div> -->
+	<div style="font-size:24px;height:100px;"> 
+		<!-- <div style="top: 20px;float:left;" class="header">Drag the black dot to the correct position given the picture!</div> -->
+		<div style="top: 40px;" class="header">Drag the red note to the correct position!</div>
+	</div>
+	<div style="clear:both; height:30px;"></div>
+
+<!-- 
+	<div style="clear:both; "></div> -->
+
+	<div class="col-md-6">
+		<img id= "planets" class="" src="/static/pic.jpg" usemap="#image-map" style="z-index:0;opacity:1" />
+		<map name="image-map">
+		      <area target="_self" alt="GA"  href="www.facebook.jpg" class = "trigger_popup_fricc" coords="362,158,10" shape="circle">
+		      <area target="_self" alt="GB" title="GB" href="www.facebook.jpg" class = "trigger_popup_fricc" coords="360,263,13" shape="circle">
+		      <area target="_self" alt="GC" title="GC" href="www.facebook.jpg" class = "trigger_popup_fricc" coords="358,311,11" shape="circle">
+		      <area target="_self" alt="GD" title="GD" href="www.facebook.jpg" class = "trigger_popup_fricc" coords="357,413,12" shape="circle">
+		      <area target="_self" alt="DE" title="DE" href="www.facebook.jpg" class = "trigger_popup_fricc" coords="382,155,10" shape="circle">
+		      <area target="_self" alt="DF" title="DF" href="www.facebook.jpg" class = "trigger_popup_fricc" coords="381,258,10" shape="circle">
+		      <area target="_self" alt="DG" title="DG" href="www.facebook.jpg" class = "trigger_popup_fricc"  coords="381,308,10" shape="circle">
+		      <area target="_self" alt="DA" title="DA"  href="www.facebook.jpg" class = "trigger_popup_fricc"coords="382,411,10" shape="circle">
+		      <area target="_self" alt="AB" title="AB"  href="www.facebook.jpg" class = "trigger_popup_fricc" coords="402,153,9" shape="circle">
+		      <area target="_self" alt="AC" title="AC"  href="www.facebook.jpg" class = "trigger_popup_fricc"  coords="403,256,10" shape="circle">
+		      <area target="_self" alt="AD" title="AD"  href="www.facebook.jpg" class = "trigger_popup_fricc" coords="403,306,10" shape="circle">
+		      <area target="_self" alt="AE" title="AE"  href="www.facebook.jpg" class = "trigger_popup_fricc"  coords="408,408,10" shape="circle">
+		      <area target="_self" alt="EF" title="EF"  href="www.facebook.jpg" class = "trigger_popup_fricc"  coords="422,152,9" shape="circle">
+		      <area target="_self" alt="EG" title="EG"  href="www.facebook.jpg" class = "trigger_popup_fricc"  coords="425,257,9" shape="circle">
+		      <area target="_self" alt="EA" title="EA"  href="www.facebook.jpg" class = "trigger_popup_fricc"  coords="427,306,9" shape="circle">
+		      <area target="_self" alt="EB" title="EB"  href="www.facebook.jpg" class = "trigger_popup_fricc" coords="434,409,10" shape="circle">
+		</map>
+	</div>
+
+	<div class="col-md-6 grid">
+		<div>
+			<img src="static/da.jpg" >
+			<img src="static/red.jpg" id="martian">
+		</div>
+		<div id="click">
+			<!-- <button type="button" class="btn btn-dark" onclick="window.location.href = "/learn""> Start Now </button> -->
+			 <button type="button" class="center btn btn-dark" id="next"> Ready to move on to the next challenge?</button>
+		</div>
+	</div>
+
+	
+</div>
+
+
+</body>
+
+
+<script> 
+	imageMapResize(); 
+</script>
+
+
+{% endblock%}
+  
+
+    
+
